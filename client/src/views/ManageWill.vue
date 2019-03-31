@@ -31,6 +31,10 @@
         <input v-model="nominee.amount" class="form-control" type="text" id="amount">%
       </div>
       <button v-on:click="addCurrentNominee()" type="submit" class="btn btn-primary">Add</button>
+      <div class="form-group">
+        <label for="privateKey">Ethereum Private Key</label>
+        <input v-model="privateKey" class="form-control" type="text" id="privateKey">
+      </div>
       <button v-on:click="confirm()" type="submit" class="btn btn-primary">Confirm Will</button>
     </div>
   </div>
@@ -52,7 +56,8 @@ export default {
         amount: 0
       },
       currentNominees: [],
-      contactsArray: []
+      contactsArray: [],
+      privateKey: ""
     }
   },
   created() {
@@ -71,7 +76,11 @@ export default {
       console.log(this.currentNominees)
     },
     confirm() {
+      if (privateKey != null && privateKey != "") {
 
+      } else {
+        alert("You need to fill in your private key.")
+      }
     }
   }
 }
