@@ -76,8 +76,36 @@ export default {
       console.log(this.currentNominees)
     },
     confirm() {
-      if (privateKey != null && privateKey != "") {
+      if (privateKey != null && privateKey != "" && this.currentNominees.length > 0) {
+        var nomineesArray = []
 
+        for (nominee of this.currentNominees) {
+
+        }
+        nomineesArray.push({
+          this
+        })
+
+        axios.post("http://207.154.233.248:3000/api/Contacts", {
+            percentage: this.addContact.name,
+            phone: this.addContact.phone,
+            mail: this.addContact.mail,
+            street: this.addContact.street,
+            streetNr: this.addContact.streetNr,
+            city: this.addContact.city,
+            zip: this.addContact.zip,
+            statusesId: this.addContact.status
+        })
+        .then(response => {
+          this.response = response.data
+          this.loadContacts()
+        // Create Private Key here
+        })
+        .catch(e => {
+          this.response = e
+          this.errors.push(e)
+          alert('Error: ' + e)
+        })
       } else {
         alert("You need to fill in your private key.")
       }
