@@ -10,6 +10,12 @@
       "type": "number",
       "required": true
     },
+    "contractAddress": {
+      "type": "string"
+    },
+    "ethereumAddress": {
+      "type": "string"
+    },
     "userId": {
       "type": "string"
     }
