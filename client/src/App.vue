@@ -3,8 +3,13 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/login" v-if="authenticated">Logout</router-link>
-      <router-link to="/login" v-if="!authenticated">Login</router-link>
+      <div style="display: inline-block" v-if="this.$parent.authenticated">
+        <router-link to="/will" v-if="this.$parent.will">Manage Wills</router-link>
+        <router-link to="/will" v-if="!this.$parent.will">Create Will</router-link> |
+        <router-link to="/contacts">Manage Contacts</router-link> |
+      </div>
+      <router-link to="/login" v-if="this.$parent.authenticated">Logout</router-link>
+      <router-link to="/login" v-if="!this.$parent.authenticated">Login</router-link>
     </div>
     <router-view/>
   </div>
@@ -35,9 +40,6 @@
 <script>
 export default {
   data() {
-    return {
-      authenticated: false
-    }
   }
 }
 </script>

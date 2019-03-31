@@ -6,13 +6,25 @@
     "validateUpsert": true
   },
   "properties": {
-    "Percentagwe": {
+    "percentage": {
       "type": "number",
       "required": true
+    },
+    "userId": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "contact": {
+      "type": "belongsTo",
+      "model": "Contact",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

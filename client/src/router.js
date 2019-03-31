@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Login from './views/Login.vue'
 import SignUp from './views/SignUp.vue'
+import ManageWill from './views/ManageWill.vue'
+import Contacts from './views/Contacts.vue'
 
 
 Vue.use(Router)
@@ -13,7 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Login
     },
     {
       path: '/about',
@@ -29,6 +31,16 @@ export default new Router({
       path: '/signup',
       name: 'signup',
       component: SignUp
+    },
+    {
+      path: '/will',
+      name: 'will',
+      component: ManageWill
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: Contacts
     }
   ]
 })

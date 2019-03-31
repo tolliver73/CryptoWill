@@ -38,21 +38,16 @@
     },
     "image": {
       "type": "buffer"
+    },
+    "userId": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
     "statuses": {
-      "type": "hasOne",
-      "model": "status",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "trustee": {
       "type": "belongsTo",
-      "model": "Trustee",
+      "model": "status",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

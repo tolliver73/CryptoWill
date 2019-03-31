@@ -9,7 +9,8 @@ new Vue({
   data () {
     return {
       authenticated: false,
-      accessToken: ""
+      accessToken: "",
+      will: false
     }
   },
   render: h => h(App)
