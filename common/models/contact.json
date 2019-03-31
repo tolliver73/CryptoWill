@@ -1,0 +1,64 @@
+{
+  "name": "Contact",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "street": {
+      "type": "string",
+      "required": true
+    },
+    "streetNr": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "zip": {
+      "type": "string",
+      "required": true
+    },
+    "etherumAdd": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "mail": {
+      "type": "string"
+    },
+    "image": {
+      "type": "buffer"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "statuses": {
+      "type": "hasOne",
+      "model": "status",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "trustee": {
+      "type": "belongsTo",
+      "model": "Trustee",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
